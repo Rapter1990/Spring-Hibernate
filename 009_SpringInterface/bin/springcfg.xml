@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="mazot" class="com.germiyanoglu.Mazot"></bean>
+	<bean id="elektrik" class="com.germiyanoglu.Elektrik"></bean>
+	<bean id="benzin" class="com.germiyanoglu.Benzin"></bean>
+	
+	<bean id="araba" class="com.germiyanoglu.Araba">
+		<constructor-arg ref="benzin"></constructor-arg>
+	</bean>
+	
+</beans>

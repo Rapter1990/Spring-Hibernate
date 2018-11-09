@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	
+	<!--  <context:annotation-config /> -->
+	
+	<!-- Autowired bu şekilde kullanılabilir. Veya yukarıda annotation comment den çıkarak 2 sini birliktede kullanabiliriz. -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor">
+	</bean>
+
+	<bean id="ogrenciBean" class="autowired.Ogrenci">
+		<property name="ad" value="Noyan" />
+		<property name="soyad" value="Germiyanoğlu" />
+		<property name="yas" value="28" />
+	</bean>
+	
+	
+	<bean id="dersBean1" class="autowired.Ders">
+		<constructor-arg ref="ogrenciBean"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="dersBean2" class="autowired.Ders">
+		<property name="dersAd" value="Geometri"></property>
+		<property name="puan" value="75"></property>
+		<property name="ogrenci" ref="ogrenciBean"></property>
+	</bean>
+	
+	
+	
+</beans>
