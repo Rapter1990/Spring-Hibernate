@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	
+	<!-- <bean id="sehirBean" class="com.germiyanoglu.model.Sehir">
+		<property name="sehirAd" value="Ankara"></property>
+		<property name="plakaNo" value="06"></property>
+	</bean>
+	
+	<bean id="ogrenciBean" class="com.germiyanoglu.model.Ogrenci">
+		<property name="ad" value="Sercan Noyan"></property>
+		<property name="soyad" value="Germiyanoğlu"></property>
+		<property name="sehir" ref="sehirBean"></property> attrbutedan ref değeri geliyor
+		
+		Etiketle geliyor
+		<property name="sehir" >
+			<ref="sehirBean"/> 
+		</property>
+		
+	</bean> -->
+	
+	
+	
+</beans>
