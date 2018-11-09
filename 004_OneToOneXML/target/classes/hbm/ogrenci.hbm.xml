@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.germiyanoglu.modal.Ogrenci" table="OGRENCI" >
+	
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" not-null="true" />
+			<generator class="native" />
+		</id>
+		
+		<property name="ad" type = "string">
+			<column name="AD" length="20" not-null="true" />
+		</property>
+		
+		<property name="soyad" type = "string">
+			<column name="SOYAD" length="30" not-null="true" />
+		</property>
+		
+		<one-to-one name="ogrenciBilgisi" class="com.germiyanoglu.modal.OgrenciBilgisi" cascade="save-update"> <!-- cascade birisi database kayıt olunurken diğeride database kayıt olunuyor. -->
+			
+		</one-to-one>
+		
+	</class>
+</hibernate-mapping>        

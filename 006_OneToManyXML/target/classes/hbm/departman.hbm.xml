@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.germiyanoglu.modal.Departman" table="DEPARTMAN">
+	
+		<id name="departmanId" type="java.lang.Integer">
+			<column name="DEPARTMAN_ID"/>
+			<generator class="native" />
+		</id>
+		
+		<property name="ad" type = "string">
+			<column name="AD" length="20" not-null="true" />
+		</property>
+		
+		<set name="calisanlar" table="CALISAN" inverse="true" lazy="true" fetch="select" >
+		
+			<key>
+				<column name="departmanId" not-null="true"></column>
+			</key>
+		
+			<one-to-many class="com.germiyanoglu.modal.Calisan" /> 
+		</set>
+		
+		
+	</class>
+</hibernate-mapping>      

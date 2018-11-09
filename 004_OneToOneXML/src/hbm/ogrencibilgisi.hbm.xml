@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.germiyanoglu.modal.OgrenciBilgisi" table="OGRENCIBILGISI">
+	
+		<id name="ogrenciId" type="java.lang.Integer">
+			<column name="OGRENCI_ID"/>
+			<generator class="foreign">
+				<param name="property">ogrenci</param>
+			</generator>
+		</id>
+		
+		<property name="adres" type = "string">
+			<column name="ADRES" length="20" not-null="true" />
+		</property>
+		
+		<property name="email" type = "string">
+			<column name="EMAIL" length="30" not-null="true" />
+		</property>
+		
+		<one-to-one name="ogrenci" class="com.germiyanoglu.modal.Ogrenci" constrained="true"> <!-- cascade birisi database kayıt olunurken diğeride database kayıt olunuyor. -->
+		</one-to-one>
+		
+	</class>
+</hibernate-mapping>      
