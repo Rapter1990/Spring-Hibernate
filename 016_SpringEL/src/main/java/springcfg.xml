@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	
+	<context:annotation-config /> 
+	
+	<!-- @Component algılaması için context içinde insert deyip ekledik ve package tanımladık -->
+	<context:component-scan base-package="com.germiyanoglu" />
+	
+	<!-- Autowired bu şekilde kullanılabilir. Veya yukarıda annotation comment den çıkarak 2 sini birliktede kullanabiliriz. -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor">
+	</bean>
+
+	<!-- 
+	<bean id="kitapBean" class="com.germiyanoglu.Kitap">
+		<property name="kitapAd" value="Spring Hibernate"></property>
+		<property name="eserIBN" value="1234567890"></property>
+	</bean>
+	
+	<bean id="yazarBean" class="com.germiyanoglu.Yazar">
+		<property name="yazarAd" value="Elvan"></property>
+		<property name="yazarSoyad" value="Soyad"></property>
+		<property name="kitap" value="#{kitapBean]"></property>
+		<property name="kitapAdi" value="#{kitapBean.kitapAd}"></property>
+	</bean>
+	 -->
+	 
+	
+	
+	
+</beans>
